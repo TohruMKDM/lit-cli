@@ -140,15 +140,6 @@ function program:getHelp()
     return print(help)
 end
 
-function program:getUsage()
-    local argString = ''
-    for i = 1, #self.arguments do
-        local argument = self.arguments[i]
-        argString = argString..argument.name..(argument.many and '... ' or ' ')
-    end
-    return self.name..' [options...] '..argString
-end
-
 function program:init(name)
     return setmetatable(makeProgram(name), self)
 end

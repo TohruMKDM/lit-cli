@@ -8,13 +8,7 @@ local function makeOption(name)
     for i = 1, #name do
         possible[sub(name, 1, i - 1)..sub(name, i + 1)] = true
     end
-    return {
-        name = name,
-        description = 'No description provided.',
-        arguments = {},
-        shorts = {},
-        possible = possible
-    }
+    return {name = name, description = 'No description provided.', shorts = {}, possible = possible}
 end
 
 function option:setDescription(description)
@@ -23,8 +17,7 @@ function option:setDescription(description)
 end
 
 function option:setArgument(argument)
-    assert((not not argument.many) == false, 'Option arguments cannot take many values')
-    argument.description = nil
+    assert(not argument.many, 'Option arguments cannot take many values')
     self.argument = argument
     return self
 end

@@ -10,10 +10,7 @@ local function makeArgument(name)
     }
 end
 
-local validTypes = {
-    string = true,
-    number = true,
-}
+local validTypes = {string = true, number = true}
 
 function argument:setDescription(description)
     self.description = description

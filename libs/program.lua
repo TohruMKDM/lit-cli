@@ -1,4 +1,4 @@
-local parser = require('parser')
+local parser = require(args and 'parser' or 'libs/parser')
 local format = string.format
 local remove, concat = table.remove, table.concat
 local sort, sorter = table.sort, function(a, b) return b.default ~= nil end

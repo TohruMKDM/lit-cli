@@ -1,4 +1,4 @@
-local parseArgs = require('parser').args
+local parseArgs = require(args and 'parser' or 'libs/parser').args
 local format, sub = string.format, string.sub
 local concat, sort, sorter = table.concat, table.sort, function(a, b) return b.default ~= nil end
 local helpFormat = '%s\n\nUsage:\n\n    %s\n\n    Option arguments that do not have a defined default value are mandatory.'

@@ -119,7 +119,7 @@ function program:getHelp()
         name = name..'--'..option.name
         if optionArg then
             name = name..'='..optionArg.name.. ' <'..optionArg.type..'>'
-            description = optionArg.default and description..' (default: '..convert(argument.default)..')' or description
+            description = optionArg.default and description..' (default: '..convert(optionArg.default)..')' or description
         end
         help = help..format(paramFormat, name, description)
     end

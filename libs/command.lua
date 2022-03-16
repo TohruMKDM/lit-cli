@@ -1,6 +1,6 @@
 local parseArgs = require('parser').args
-local format = string.format
-local sort, sorter = table.sort, function(a, b) return b.default ~= nil end
+local format, sub = string.format, string.sub
+local concat, sort, sorter = table.concat, table.sort, function(a, b) return b.default ~= nil end
 local helpFormat = '%s\n\nUsage:\n\n    %s\n\n    Option arguments that do not have a defined default value are mandatory.'
 local paramFormat = '\n\n    %s\n        %s'
 

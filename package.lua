@@ -1,6 +1,6 @@
 return {
-    name = 'cli',
-    version = '1.0.0',
+    name = 'TohruMKDM/cli',
+    version = '0.0.1',
     description = 'A simple module to aid in the creation of command line interfaces',
     tags = {'cli'},
     license = 'MIT',

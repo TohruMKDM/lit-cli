@@ -213,7 +213,7 @@ local function parseCommands(obj, args)
     if #args == 0 then
         return makeError(obj, 'no command given')
     end
-    local input = args[i]
+    local input = args[1]
     if sub(input, 1, 2) == '--' then
         input = sub(input, 3)
         local name, value = match(input, '(.+)=(.+)')
@@ -251,7 +251,7 @@ local function parseCommands(obj, args)
     end
     local command = getCommand(obj, input)
     if command then
-        remve(args, 1)
+        remove(args, 1)
         command:parse(args)
     end
 end

@@ -1,8 +1,9 @@
-local luvi = args and true
-
+if not args then
+    package.path = debug.getinfo(1).short_src:gsub('init.lua', 'libs\\?.lua;')..package.path
+end
 return {
-    command = require(luvi and 'command' or 'libs/command'),
-    argument = require(luvi and 'argument' or 'libs/argument'),
-    program = require(luvi and 'program' or 'libs/program'),
-    option = require(luvi and 'option' or 'libs/option')
+    command = require('command'),
+    argument = require('argument'),
+    program = require('program'),
+    option = require('option')
 }
